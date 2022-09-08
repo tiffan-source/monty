@@ -1,10 +1,6 @@
-push 0
 push 1
-push ddx
-  push 3
-ed
-pall    
-push 4
-    push 5    
-      push    6        
-pall
+pint
+push 2
+pint
+push 3
+pint

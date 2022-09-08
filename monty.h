@@ -26,6 +26,7 @@ typedef struct stack_s
 stack_t *push_stack(stack_t **head, const int n);
 stack_t *push_on_head(stack_t **head, const int n);
 void print_stack(const stack_t *h);
+void print_top(const stack_t *h);
 void free_stack(stack_t *h);
 
 /**
@@ -45,6 +46,7 @@ typedef struct instruction_s
 void handle_push(stack_t **stack, unsigned int line);
 void handle_pall(stack_t **stack, unsigned int line);
 void handle_void(stack_t **stack, unsigned int line);
+void handle_pint(stack_t **stack, unsigned int line);
 
 extern instruction_t main_instruction;
 
