@@ -19,15 +19,13 @@ void (*gt_hdl(stack_t **stack, int l_nbr))(stack_t **stack, unsigned int l_nbr)
 	if (instruction != NULL)
 	{
 		if (strcmp(instruction, "push") == 0)
-		{
 			return (&handle_push);
-		}
 		else if (strcmp(instruction, "pall") == 0)
-		{
 			return (&handle_pall);
-		}
 		else if (strcmp(instruction, "pint") == 0)
 			return (&handle_pint);
+		else if (strcmp(instruction, "pop") == 0)
+			return (&handle_pop);
 
 		fprintf(stderr, "L%d: unknown instruction", l_nbr);
 		fprintf(stderr, " %s\n", main_instruction.opcode);
