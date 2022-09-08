@@ -28,13 +28,12 @@ void (*gt_hdl(stack_t **stack, int l_nbr))(stack_t **stack, unsigned int l_nbr)
 		}
 		else if (strcmp(instruction, "pint") == 0)
 			return (&handle_pint);
-		else
-		{
-			fprintf(stderr, "L%d: unknown instruction", l_nbr);
-			fprintf(stderr, " %s\n", main_instruction.opcode);
-			free_stack(*stack);
-			exit(EXIT_FAILURE);
-		}
+
+		fprintf(stderr, "L%d: unknown instruction", l_nbr);
+		fprintf(stderr, " %s\n", main_instruction.opcode);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+
 	}
 
 	return (&handle_void);
