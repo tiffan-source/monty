@@ -2,9 +2,17 @@
 
 instruction_t main_instruction;
 
-void (*gt_hdle(FILE *stream, stack_t **stack, int l_nbr))(stack_t **stack, unsigned int l_nbr)
+/**
+ * gt_hdl - get the handle function to handle opcode
+ * @stack: stack to store data
+ * @l_nbr: line number of opcode
+ *
+ * Return: handle function
+ */
+
+void (*gt_hdl(stack_t **stack, int l_nbr))(stack_t **stack, unsigned int l_nbr)
 {
-	char* instruction = NULL;
+	char *instruction = NULL;
 
 	instruction = strtok(main_instruction.opcode, " ");
 
@@ -20,10 +28,9 @@ void (*gt_hdle(FILE *stream, stack_t **stack, int l_nbr))(stack_t **stack, unsig
 		}
 		else
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", l_nbr, main_instruction.opcode);
-
+			fprintf(stderr, "L%d: unknown instruction", l_nbr);
+			fprintf(stderr, " %s\n", main_instruction.opcode);
 			free_stack(*stack);
-			fclose(stream);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -67,7 +74,7 @@ int main(int argc, char **argv)
 	{
 
 		main_instruction.opcode = line_instruc;
-		main_instruction.f = gt_hdle(monty_fd, &stack, line_nbr);
+		main_instruction.f = gt_hdl(&stack, line_nbr);
 
 		main_instruction.f(&stack, line_nbr);
 
