@@ -6,7 +6,7 @@
  *
  */
 
-void add_stack(stack_t **h)
+void mul_stack(stack_t **h)
 {
 	stack_t *save = *h;
 
