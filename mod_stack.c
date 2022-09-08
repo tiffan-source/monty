@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * add_stack - add two top integer of the stack
+ * mod_stack - mod two top integer of the stack
  * @h: stack to handle
  *
  */
 
-void add_stack(stack_t **h)
+void mod_stack(stack_t **h)
 {
 	stack_t *save = *h;
 
@@ -14,7 +14,7 @@ void add_stack(stack_t **h)
 		save = save->next;
 
 
-	save->n += save->next->n;
+	save->n %= save->next->n;
 	free(save->next);
 	save->next = NULL;
 }
