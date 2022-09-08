@@ -30,6 +30,8 @@ void (*gt_hdl(stack_t **stack, int l_nbr))(stack_t **stack, unsigned int l_nbr)
 			return (&handle_swap);
 		else if (strcmp(instruction, "add") == 0)
 			return (&handle_add);
+		else if (strcmp(instruction, "nop") == 0)
+			return (&handle_void);
 
 		fprintf(stderr, "L%d: unknown instruction", l_nbr);
 		fprintf(stderr, " %s\n", main_instruction.opcode);
