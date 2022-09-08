@@ -15,7 +15,6 @@ void (*gt_hdl(stack_t **stack, int l_nbr))(stack_t **stack, unsigned int l_nbr)
 	char *instruction = NULL;
 
 	instruction = strtok(main_instruction.opcode, " ");
-
 	if (instruction != NULL)
 	{
 		if (strcmp(instruction, "push") == 0)
@@ -34,7 +33,8 @@ void (*gt_hdl(stack_t **stack, int l_nbr))(stack_t **stack, unsigned int l_nbr)
 			return (&handle_void);
 		else if (strcmp(instruction, "sub") == 0)
 			return (&handle_sub);
-
+		else if (strcmp(instruction, "div") == 0)
+			return (&handle_sub);
 		fprintf(stderr, "L%d: unknown instruction", l_nbr);
 		fprintf(stderr, " %s\n", main_instruction.opcode);
 		free_stack(*stack);
