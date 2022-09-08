@@ -26,7 +26,7 @@ int _getline(char **line, FILE *stream, int idx)
 
 		if (*line == NULL)
 		{
-			printf("Error: malloc failed\n");
+			fprintf(stderr, "Error: malloc failed\n");
 			exit(EXIT_FAILURE);
 		}
 

@@ -25,7 +25,7 @@ void handle_code(stack_t **stack, unsigned int l_nbr)
 	}
 	else
 	{
-		printf("L%d: unknow instruction %s\n", l_nbr, main_instruction.opcode);
+		fprintf(stderr, "L%d: unknow instruction %s\n", l_nbr, main_instruction.opcode);
 		exit(EXIT_FAILURE);
 	}
 }
