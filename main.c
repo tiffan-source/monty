@@ -28,14 +28,14 @@ void (*gt_hdl(stack_t **stack, int l_nbr))(stack_t **stack, unsigned int l_nbr)
 			return (&handle_pop);
 		else if (strcmp(instruction, "swap") == 0)
 			return (&handle_swap);
+		else if (strcmp(instruction, "add") == 0)
+			return (&handle_add);
 
 		fprintf(stderr, "L%d: unknown instruction", l_nbr);
 		fprintf(stderr, " %s\n", main_instruction.opcode);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
-
 	}
-
 	return (&handle_void);
 }
 

@@ -30,6 +30,7 @@ void print_top(const stack_t *h);
 void free_stack(stack_t *h);
 void pop_stack(stack_t **h);
 void swap_stack(stack_t **h);
+void add_stack(stack_t **h);
 
 /**
  * struct instruction_s - opcode and its function
@@ -51,6 +52,7 @@ void handle_void(stack_t **stack, unsigned int line);
 void handle_pint(stack_t **stack, unsigned int line);
 void handle_pop(stack_t **stack, unsigned int line);
 void handle_swap(stack_t **stack, unsigned int line);
+void handle_add(stack_t **stack, unsigned int line);
 
 extern instruction_t main_instruction;
 
