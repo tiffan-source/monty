@@ -14,18 +14,21 @@ void handle_code(stack_t **stack, unsigned int l_nbr)
 
 	instruction = strtok(main_instruction.opcode, " ");
 
-	if (strcmp(instruction, "push") == 0)
+	if (instruction != NULL)
 	{
-		data_isrt = atoi(strtok(NULL, " "));
-		push_stack(stack, data_isrt);
-	}
-	else if (strcmp(instruction, "pall") == 0)
-	{
-		print_stack(*stack);
-	}
-	else
-	{
-		fprintf(stderr, "L%d: unknow instruction %s\n", l_nbr, main_instruction.opcode);
-		exit(EXIT_FAILURE);
+		if (strcmp(instruction, "push") == 0)
+		{
+			data_isrt = atoi(strtok(NULL, " "));
+			push_stack(stack, data_isrt);
+		}
+		else if (strcmp(instruction, "pall") == 0)
+		{
+			print_stack(*stack);
+		}
+		else
+		{
+			fprintf(stderr, "L%d: unknow instruction %s\n", l_nbr, main_instruction.opcode);
+			exit(EXIT_FAILURE);
+		}
 	}
 }
