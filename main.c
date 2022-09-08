@@ -26,6 +26,8 @@ void (*gt_hdl(stack_t **stack, int l_nbr))(stack_t **stack, unsigned int l_nbr)
 			return (&handle_pint);
 		else if (strcmp(instruction, "pop") == 0)
 			return (&handle_pop);
+		else if (strcmp(instruction, "swap") == 0)
+			return (&handle_swap);
 
 		fprintf(stderr, "L%d: unknown instruction", l_nbr);
 		fprintf(stderr, " %s\n", main_instruction.opcode);
