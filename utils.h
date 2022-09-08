@@ -4,6 +4,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int _getline(char **line, FILE *stream, int count);
+int _getline(char *line, FILE *stream, int count);
 
 #endif

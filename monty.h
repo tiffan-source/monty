@@ -23,6 +23,11 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 
+stack_t *push_stack(stack_t **head, const int n);
+stack_t *push_on_head(stack_t **head, const int n);
+void print_stack(const stack_t *h);
+void free_stack(stack_t *h);
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -37,13 +42,10 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern instruction_t main_instruction;
+void handle_push(stack_t **stack, unsigned int line);
+void handle_pall(stack_t **stack, unsigned int line);
+void handle_void(stack_t **stack, unsigned int line);
 
-void handle_code(stack_t **stack, unsigned int line_number);
-void alloc_stack(stack_t **stack);
-stack_t *push_stack(stack_t **head, const int n);
-stack_t *push_on_head(stack_t **head, const int n);
-void print_stack(const stack_t *h);
-void free_stack(stack_t *h);
+extern instruction_t main_instruction;
 
 #endif

@@ -9,7 +9,7 @@
  * Return: 0 on sucess -1 on end of file
  */
 
-int _getline(char **line, FILE *stream, int idx)
+int _getline(char *line, FILE *stream, int idx)
 {
 	int c, test;
 
@@ -17,20 +17,12 @@ int _getline(char **line, FILE *stream, int idx)
 	if (c != EOF && c != '\n')
 	{
 		test = _getline(line, stream, idx + 1);
-		(*line)[idx] = c;
+		line[idx] = c;
 		return (test);
 	}
 	else
 	{
-		*line = malloc(sizeof(char) * (idx + 1));
-
-		if (*line == NULL)
-		{
-			fprintf(stderr, "Error: malloc failed\n");
-			exit(EXIT_FAILURE);
-		}
-
-		(*line)[idx] = '\0';
+		line[idx] = '\0';
 
 		if (c == EOF && idx == 0)
 			return (-1);
