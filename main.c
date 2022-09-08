@@ -34,7 +34,7 @@ void (*gt_hdl(stack_t **stack, int l_nbr))(stack_t **stack, unsigned int l_nbr)
 		else if (strcmp(instruction, "sub") == 0)
 			return (&handle_sub);
 		else if (strcmp(instruction, "div") == 0)
-			return (&handle_sub);
+			return (&handle_div);
 		fprintf(stderr, "L%d: unknown instruction", l_nbr);
 		fprintf(stderr, " %s\n", main_instruction.opcode);
 		free_stack(*stack);
