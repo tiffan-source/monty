@@ -8,13 +8,16 @@
 
 void print_str_top(const stack_t *h)
 {
-	while (h->next != NULL)
-		h = h->next;
-
-	while (h != NULL && (h->n > 0 && h->n <= 127))
+	if (h != NULL)
 	{
-		printf("%c", h->n);
-		h = h->prev;
+		while (h->next != NULL)
+			h = h->next;
+
+		while (h != NULL && (h->n > 0 && h->n <= 127))
+		{
+			printf("%c", h->n);
+			h = h->prev;
+		}
 	}
 	printf("\n");
 }
