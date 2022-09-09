@@ -2,6 +2,15 @@
 
 instruction_t main_instruction;
 
+int check_comment(char *str)
+{
+	if (*str == ' ')
+		return (check_comment(str + 1));
+	else if (*str == '#')
+		return (0);
+	return (-1);
+}
+
 /**
  * gt_hdl - get the handle function to handle opcode
  * @stack: stack to store data
@@ -81,12 +90,12 @@ int main(int argc, char **argv)
 
 	while (tst_gl != -1)
 	{
-
-		main_instruction.opcode = line_instruc;
-		main_instruction.f = gt_hdl(&stack, line_nbr);
-
-		main_instruction.f(&stack, line_nbr);
-
+		if (check_comment(line_instruc) != 0)
+		{
+			main_instruction.opcode = line_instruc;
+			main_instruction.f = gt_hdl(&stack, line_nbr);
+			main_instruction.f(&stack, line_nbr);
+		}
 		tst_gl = _getline(line_instruc, monty_fd, 0);
 		line_nbr++;
 	}
