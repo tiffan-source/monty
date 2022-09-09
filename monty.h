@@ -27,6 +27,7 @@ stack_t *push_stack(stack_t **head, const int n);
 stack_t *push_on_head(stack_t **head, const int n);
 void print_stack(const stack_t *h);
 void print_top(const stack_t *h);
+void print_char_top(const stack_t *h);
 void free_stack(stack_t *h);
 void pop_stack(stack_t **h);
 void swap_stack(stack_t **h);
@@ -61,6 +62,7 @@ void handle_sub(stack_t **stack, unsigned int line);
 void handle_div(stack_t **stack, unsigned int line);
 void handle_mul(stack_t **stack, unsigned int line);
 void handle_mod(stack_t **stack, unsigned int line);
+void handle_pchar(stack_t **stack, unsigned int line);
 
 extern instruction_t main_instruction;
 

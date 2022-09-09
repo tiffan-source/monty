@@ -2,6 +2,13 @@
 
 instruction_t main_instruction;
 
+/**
+ * check_comment - check if line is a comment
+ * @str: line to check
+ *
+ * Return: 0 if comment -1 else
+ */
+
 int check_comment(char *str)
 {
 	if (*str == ' ')
@@ -48,6 +55,8 @@ void (*gt_hdl(stack_t **stack, int l_nbr))(stack_t **stack, unsigned int l_nbr)
 			return (&handle_mul);
 		else if (strcmp(instruction, "mod") == 0)
 			return (&handle_mod);
+		else if (strcmp(instruction, "pchar") == 0)
+			return (&handle_pchar);
 		fprintf(stderr, "L%d: unknown instruction", l_nbr);
 		fprintf(stderr, " %s\n", main_instruction.opcode);
 		free_stack(*stack);
