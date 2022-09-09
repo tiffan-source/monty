@@ -1,6 +1,6 @@
 #include "monty.h"
 
-#define UNUSED __attribute__((unused))
+
 
 /**
  * handle_void - do nothing on the stack

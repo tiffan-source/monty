@@ -1,6 +1,8 @@
 #ifndef _MONTY_
 #define _MONTY_
 
+#define UNUSED __attribute__((unused))
+
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,6 +30,7 @@ stack_t *push_on_head(stack_t **head, const int n);
 void print_stack(const stack_t *h);
 void print_top(const stack_t *h);
 void print_char_top(const stack_t *h);
+void print_str_top(const stack_t *h);
 void free_stack(stack_t *h);
 void pop_stack(stack_t **h);
 void swap_stack(stack_t **h);
@@ -63,6 +66,7 @@ void handle_div(stack_t **stack, unsigned int line);
 void handle_mul(stack_t **stack, unsigned int line);
 void handle_mod(stack_t **stack, unsigned int line);
 void handle_pchar(stack_t **stack, unsigned int line);
+void handle_pstr(stack_t **stack, unsigned int line);
 
 extern instruction_t main_instruction;
 

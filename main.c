@@ -57,6 +57,8 @@ void (*gt_hdl(stack_t **stack, int l_nbr))(stack_t **stack, unsigned int l_nbr)
 			return (&handle_mod);
 		else if (strcmp(instruction, "pchar") == 0)
 			return (&handle_pchar);
+		else if (strcmp(instruction, "pstr") == 0)
+			return (&handle_pstr);
 		fprintf(stderr, "L%d: unknown instruction", l_nbr);
 		fprintf(stderr, " %s\n", main_instruction.opcode);
 		free_stack(*stack);
