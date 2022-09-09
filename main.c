@@ -91,7 +91,7 @@ int main(int argc, char **argv)
 
 	if (monty_fd == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 
